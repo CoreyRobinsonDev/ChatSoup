@@ -1,2 +1,38 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import type { Item } from "$lib/types";
+    import Combobox from "$lib/components/custom/combobox/combobox.svelte";
+
+
+    const items: Item[] = [
+	{
+	    value: "backlog",
+	    label: "Backlog"
+	},
+	{
+	    value: "todo",
+	    label: "Todo"
+	},
+	{
+	    value: "in progress",
+	    label: "In Progress"
+	},
+	{
+	    value: "done",
+	    label: "Done"
+	},
+	{
+	    value: "canceled",
+	    label: "Canceled"
+	},
+	{
+	    value: "test",
+	    label: "Test"
+	}
+    ];
+</script>
+
+
+<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+	ChatSoup
+</h1>
+<Combobox items={items}></Combobox>
